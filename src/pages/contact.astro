@@ -63,16 +63,14 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- RIGHT: Calendly embed or fallback -->
+      <!-- RIGHT: Calendly embed -->
       <div class="contact-book">
-        <div class="book-card">
-          <h3>Schedule directly</h3>
-          <p class="book-sub">Pick a time that works for you. Available Mon–Fri, multiple time zones.</p>
-          <a href="https://calendly.com" target="_blank" class="btn-primary" style="width:100%;justify-content:center;font-size:1.05rem;padding:16px;">
-            Open Scheduling →
-          </a>
-          <div class="book-or">or reach us by email</div>
-          <a href="mailto:hello@projectsaiyan.io" class="email-link">hello@projectsaiyan.io</a>
+        <div class="calendly-wrap">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/surabhinaveenkumar18/30min?text_color=4b0707&background_color=0f0f1e&primary_color=6c63ff" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+        <div class="book-email">
+          Prefer email? <a href="mailto:hello@projectsaiyan.io">hello@projectsaiyan.io</a>
         </div>
 
         <div class="faq-mini">
@@ -115,12 +113,10 @@ import Layout from '../layouts/Layout.astro';
   .trust-icon { font-size: 1rem; }
 
   /* RIGHT */
-  .book-card { background: var(--card); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 2.5rem; margin-bottom: 2rem; }
-  .book-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .book-sub { color: var(--text2); font-size: 0.9rem; margin-bottom: 1.5rem; }
-  .book-or { text-align: center; color: var(--text2); font-size: 0.85rem; margin: 1.25rem 0 0.75rem; }
-  .email-link { display: block; text-align: center; color: var(--accent2); font-size: 0.95rem; font-weight: 600; }
-  .email-link:hover { text-decoration: underline; }
+  .calendly-wrap { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .book-email { text-align: center; color: var(--text2); font-size: 0.88rem; margin-top: 1rem; }
+  .book-email a { color: var(--accent2); font-weight: 600; }
+  .book-email a:hover { text-decoration: underline; }
 
   /* FAQ Mini */
   .faq-mini h4 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text2); margin-bottom: 1rem; }
