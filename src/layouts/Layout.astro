@@ -1,0 +1,157 @@
+---
+// src/layouts/Layout.astro
+const { title = 'Project Saiyan', description = 'Automated API Security Testing. Deployed Inside Your AWS Account.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} — Project Saiyan</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href={base} class="nav-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Project Saiyan</span>
+        </a>
+        <div class="nav-links">
+          <a href={`${base}#features`}>Features</a>
+          <a href={`${base}#how-it-works`}>How It Works</a>
+          <a href={`${base}#pricing`}>Pricing</a>
+          <a href={`${base}blog/`}>Blog</a>
+          <a href="https://calendly.com" target="_blank" class="nav-cta">Book a Demo</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          <span>Project Saiyan</span>
+        </div>
+        <div class="footer-links">
+          <a href={`${base}#features`}>Features</a>
+          <a href={`${base}#pricing`}>Pricing</a>
+          <a href={`${base}blog/`}>Blog</a>
+          <a href="mailto:hello@projectsaiyan.io">Contact</a>
+        </div>
+        <p class="footer-copy">© 2026 Project Saiyan. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #0f0f1a;
+    --bg3: #141428;
+    --border: #1e1e3a;
+    --accent: #6c63ff;
+    --accent2: #00d4ff;
+    --danger: #ff4d6d;
+    --text: #e8e8f0;
+    --text2: #8888aa;
+    --text3: #5555777;
+    --card: #0f0f1e;
+    --radius: 12px;
+    --font: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; }
+  .logo-icon { font-size: 1.3rem; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a { color: var(--text2); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent); color: #fff !important;
+    padding: 8px 20px; border-radius: 8px; font-weight: 600;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  .footer { border-top: 1px solid var(--border); padding: 3rem 2rem; margin-top: 6rem; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+  .footer-brand { display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; margin-bottom: 1.5rem; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--text2); font-size: 0.9rem; }
+  .footer-links a:hover { color: var(--text); }
+  .footer-copy { color: var(--text2); font-size: 0.85rem; }
+
+  /* UTILS */
+  .section { max-width: 1200px; margin: 0 auto; padding: 6rem 2rem; }
+  .section-label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 1rem; }
+  .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; }
+  .section-sub { color: var(--text2); font-size: 1.1rem; max-width: 600px; line-height: 1.7; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(108,99,255,0.12); color: var(--accent);
+    border: 1px solid rgba(108,99,255,0.25);
+    padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff;
+    padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 1rem;
+    transition: all 0.2s; border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #7c74ff; transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--text);
+    padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 1rem;
+    border: 1px solid var(--border); transition: all 0.2s; cursor: pointer;
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* GLOW BG */
+  .glow { position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .section { padding: 4rem 1.5rem; }
+  }
+</style>

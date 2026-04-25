@@ -1,0 +1,342 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Project Saiyan — API Security Testing in Your AWS Account">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow glow" style="width:600px;height:600px;background:rgba(108,99,255,0.15);top:-200px;left:50%;transform:translateX(-50%)"></div>
+    <div class="hero-inner">
+      <div class="badge">⚡ Now available — self-hosted on your AWS</div>
+      <h1 class="hero-title">
+        Automated API Security Testing.<br/>
+        <span class="gradient-text">Deployed Inside Your AWS Account.</span>
+      </h1>
+      <p class="hero-sub">
+        Find IDOR, SSRF, XXE, authentication flaws, and 22 more vulnerability classes automatically.
+        WAF correlation included. Your scan data never leaves your cloud.
+      </p>
+      <div class="hero-actions">
+        <a href="https://calendly.com" target="_blank" class="btn-primary">
+          Book a Free Demo →
+        </a>
+        <a href="#how-it-works" class="btn-secondary">
+          See How It Works
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">25</span><span class="stat-label">Vulnerability detectors</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">23</span><span class="stat-label">Pentest phases</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">&lt;4h</span><span class="stat-label">Time to deploy</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-label">Data sent to vendor</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-inner">
+      <span class="trust-label">Trusted by security teams at</span>
+      <div class="trust-logos">
+        <span class="trust-item">🏦 Fintech</span>
+        <span class="trust-item">🏥 Healthcare</span>
+        <span class="trust-item">☁️ SaaS Companies</span>
+        <span class="trust-item">🛡️ MSSPs</span>
+        <span class="trust-item">🚀 Series B+ Startups</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section problem-section" id="problem">
+    <div class="problem-inner">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">Your current tools are lying to you.</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">😤</div>
+          <h3>High false positive rates</h3>
+          <p>OWASP ZAP and generic DAST tools flood your team with alerts that aren't real vulnerabilities — killing productivity and trust.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">☁️</div>
+          <h3>SaaS tools own your data</h3>
+          <p>Tools like Akto and StackHawk process your vulnerability data on their servers. That's a compliance risk your CISO can't accept.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🐢</div>
+          <h3>Manual testing doesn't scale</h3>
+          <p>Burp Suite is great — for manual work. Your API surface grows faster than your team. Automated, accurate testing isn't optional anymore.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Everything your AppSec team needs.</h2>
+    <p class="section-sub">Not a checklist of generic DAST features. Built specifically for API security and modern cloud architectures.</p>
+
+    <div class="features-grid">
+      <div class="feature-card feature-main">
+        <div class="feature-icon">🎯</div>
+        <h3>25 Vulnerability Detectors</h3>
+        <p>IDOR/BOLA, SSRF, XXE, SQL Injection, XSS, Authentication bypass, Broken object property-level authorization, Mass assignment, and 17 more — each with a 5-layer false-positive prevention system.</p>
+        <div class="feature-tags">
+          <span class="tag">IDOR/BOLA</span><span class="tag">SSRF</span><span class="tag">XXE</span>
+          <span class="tag">SQLi</span><span class="tag">Auth Bypass</span><span class="tag">+20 more</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📡</div>
+        <h3>Real-Time WAF Correlation</h3>
+        <p>See which attacks made it through your AWS WAF and which were blocked. Cross-correlate findings with live attack intelligence from OpenSearch.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Assisted Triage</h3>
+        <p>Auto-reject false positives with 95%+ confidence. Your team focuses on real vulnerabilities, not noise. Powered by GPT-4 running in your account.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🗡️</div>
+        <h3>Full Pentest Pipeline</h3>
+        <p>23-phase automated reconnaissance to exploitation: port scanning, subdomain enumeration, WAF fingerprinting, XSS pipeline, credential scanning, and an interactive pentest terminal.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🕵️</div>
+        <h3>Attacker Intelligence Reports</h3>
+        <p>Know who is attacking you right now. IP reputation, geo-timeline analysis, impossible travel detection, and coordinated attack correlation — all from your own WAF logs.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔗</div>
+        <h3>MCP Server for AI Agents</h3>
+        <p>Connect your AI coding assistant directly to your security findings. Query vulnerabilities, approve endpoints, and trigger scans from your IDE or AI agent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="hiw-inner">
+      <div>
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Running in your AWS in under 4 hours.</h2>
+        <p class="section-sub">No SaaS signup. No data leaving your account. Just deploy and start finding vulnerabilities.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Deploy to your ECS</h3>
+            <p>One CDK command deploys the full stack — Rails app, Sidekiq workers, PostgreSQL, Redis, and the AI triage service — all inside your AWS VPC.</p>
+            <code class="code-block">cdk deploy ApiSecurityAppStack</code>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Connect your APIs</h3>
+            <p>Import from OpenAPI/Swagger, point at your traffic source, or connect your AWS WAF logs. Inventory builds automatically.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Get findings, not alerts</h3>
+            <p>The scanner runs 25 detectors against each endpoint. AI triage filters noise. You get confirmed vulnerabilities with request/response proof.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, honest pricing.</h2>
+    <p class="section-sub">Annual license. Deployed on your infrastructure. No per-user fees. No data transmission costs.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">$4,800<span>/year</span></div>
+        <div class="plan-desc">1 environment · API Security + WAF Monitoring</div>
+        <ul class="plan-features">
+          <li>✓ 25 vulnerability detectors</li>
+          <li>✓ WAF event monitoring</li>
+          <li>✓ AI-assisted triage</li>
+          <li>✓ Email security reports</li>
+          <li>✓ Standard support (email)</li>
+        </ul>
+        <a href="https://calendly.com" target="_blank" class="btn-secondary" style="width:100%;justify-content:center;margin-top:auto">Book a Demo</a>
+      </div>
+
+      <div class="pricing-card pricing-featured">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name">Professional</div>
+        <div class="plan-price">$12,000<span>/year</span></div>
+        <div class="plan-desc">3 environments · All features + Pentest Platform</div>
+        <ul class="plan-features">
+          <li>✓ Everything in Starter</li>
+          <li>✓ Full 23-phase pentest pipeline</li>
+          <li>✓ Attacker intelligence reports</li>
+          <li>✓ Interactive pentest terminal</li>
+          <li>✓ MCP server for AI agents</li>
+          <li>✓ Priority support + onboarding call</li>
+        </ul>
+        <a href="https://calendly.com" target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-top:auto">Book a Demo</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price">Custom</div>
+        <div class="plan-desc">Unlimited environments · MSSPs & Large Teams</div>
+        <ul class="plan-features">
+          <li>✓ Everything in Professional</li>
+          <li>✓ Unlimited environments</li>
+          <li>✓ Custom WAF rule configuration</li>
+          <li>✓ Dedicated onboarding engineer</li>
+          <li>✓ SLA guarantee</li>
+          <li>✓ Audit log export / SIEM integration</li>
+        </ul>
+        <a href="mailto:hello@projectsaiyan.io" class="btn-secondary" style="width:100%;justify-content:center;margin-top:auto">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="faq-inner">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common questions.</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Where is my vulnerability data stored?</h3>
+          <p>Entirely in your AWS account. Project Saiyan runs on your ECS, stores data in your RDS (PostgreSQL), and never transmits finding data to our servers.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What AWS infrastructure do I need?</h3>
+          <p>ECS (Fargate), RDS PostgreSQL, ElastiCache Redis, and an ALB. The CDK stack provisions all of this. Estimated AWS cost: $150–400/month depending on scan volume.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does deployment take?</h3>
+          <p>A DevOps engineer familiar with CDK can deploy the full stack in 3–4 hours. We provide a step-by-step guide and an onboarding call on Professional and Enterprise plans.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it work with existing WAF setups?</h3>
+          <p>Yes. It integrates with AWS WAF via Kinesis Firehose delivery to S3 and via OpenSearch. Works with existing ACLs — no WAF rule changes required.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What APIs can it scan?</h3>
+          <p>REST APIs (from OpenAPI/Swagger spec or live traffic capture), GraphQL endpoints, and web applications. Both authenticated and unauthenticated flows.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there a free trial?</h3>
+          <p>Yes — we offer a 14-day trial license after a demo call. This gives you full access to deploy and run scans in one environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="cta-section">
+    <div class="cta-glow glow" style="width:500px;height:500px;background:rgba(108,99,255,0.12);top:-150px;left:50%;transform:translateX(-50%)"></div>
+    <div class="cta-inner">
+      <h2 class="section-title">Ready to find real vulnerabilities?</h2>
+      <p class="section-sub" style="margin:0 auto 2.5rem">Book a 45-minute demo. We'll show you a live scan against a vulnerable API and walk through the deployment on your AWS.</p>
+      <a href="https://calendly.com" target="_blank" class="btn-primary" style="font-size:1.1rem;padding:16px 36px">
+        Book a Free Demo →
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .hero { position: relative; overflow: hidden; padding: 7rem 2rem 5rem; text-align: center; }
+  .hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
+  .hero-title { font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 800; line-height: 1.05; margin-bottom: 1.5rem; }
+  .gradient-text { background: linear-gradient(135deg, #6c63ff, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { color: var(--text2); font-size: 1.2rem; max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem; }
+  .hero-stats { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; padding: 2rem; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); }
+  .stat { text-align: center; }
+  .stat-num { display: block; font-size: 2rem; font-weight: 800; color: var(--accent2); font-family: var(--mono); }
+  .stat-label { font-size: 0.8rem; color: var(--text2); }
+  .stat-div { width: 1px; height: 40px; background: var(--border); }
+
+  /* TRUST */
+  .trust-bar { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; }
+  .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+  .trust-label { color: var(--text2); font-size: 0.85rem; font-weight: 500; white-space: nowrap; }
+  .trust-logos { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+  .trust-item { color: var(--text2); font-size: 0.9rem; }
+
+  /* PROBLEM */
+  .problem-section { background: var(--bg2); border-radius: 24px; }
+  .problem-inner { max-width: 1200px; margin: 0 auto; }
+  .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .problem-card { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+  .problem-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .problem-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .problem-card p { color: var(--text2); font-size: 0.95rem; line-height: 1.7; }
+
+  /* FEATURES */
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: border-color 0.2s; }
+  .feature-card:hover { border-color: rgba(108,99,255,0.4); }
+  .feature-main { grid-column: span 1; background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(0,212,255,0.04)); border-color: rgba(108,99,255,0.3); }
+  .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .feature-card p { color: var(--text2); font-size: 0.9rem; line-height: 1.7; }
+  .feature-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+  .tag { background: rgba(108,99,255,0.15); color: var(--accent); border: 1px solid rgba(108,99,255,0.2); padding: 3px 10px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; }
+
+  @media (max-width: 900px) { .features-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } .feature-main { grid-column: span 1; } }
+
+  /* HOW IT WORKS */
+  .hiw-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .steps { display: flex; flex-direction: column; gap: 2.5rem; }
+  .step { display: flex; gap: 1.5rem; }
+  .step-num { font-family: var(--mono); font-size: 1.5rem; font-weight: 700; color: var(--accent); opacity: 0.6; min-width: 40px; line-height: 1.3; }
+  .step-content h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .step-content p { color: var(--text2); font-size: 0.9rem; line-height: 1.7; }
+  .code-block { display: block; font-family: var(--mono); font-size: 0.82rem; background: var(--bg3); border: 1px solid var(--border); padding: 10px 16px; border-radius: 8px; margin-top: 1rem; color: var(--accent2); }
+  @media (max-width: 900px) { .hiw-inner { grid-template-columns: 1fr; gap: 3rem; } }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; align-items: start; }
+  .pricing-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem; position: relative; }
+  .pricing-featured { border-color: var(--accent); background: linear-gradient(135deg, rgba(108,99,255,0.08), var(--card)); }
+  .plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 14px; border-radius: 100px; white-space: nowrap; }
+  .plan-name { font-size: 1rem; font-weight: 700; color: var(--text2); }
+  .plan-price { font-size: 2.5rem; font-weight: 800; font-family: var(--mono); }
+  .plan-price span { font-size: 1rem; font-weight: 400; color: var(--text2); }
+  .plan-desc { color: var(--text2); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+  .plan-features li { font-size: 0.9rem; color: var(--text2); }
+  @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .faq-item { border-top: 1px solid var(--border); padding-top: 1.5rem; }
+  .faq-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .faq-item p { color: var(--text2); font-size: 0.9rem; line-height: 1.7; }
+  @media (max-width: 700px) { .faq-grid { grid-template-columns: 1fr; } }
+
+  /* CTA */
+  .cta-section { position: relative; overflow: hidden; text-align: center; padding: 6rem 2rem; background: var(--bg2); }
+  .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+</style>

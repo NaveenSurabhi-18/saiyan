@@ -1,0 +1,136 @@
+---
+// src/pages/contact.astro
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Book a Demo — Project Saiyan" description="Book a 45-minute demo. We'll show you a live scan and walk through deploying Project Saiyan on your AWS.">
+
+  <section class="section contact-hero">
+    <div class="section-label">Get Started</div>
+    <h1 class="section-title">Book a Free Demo</h1>
+    <p class="section-sub">A 45-minute session. We'll run a live scan against a vulnerable API, show real findings, and walk through deploying on your AWS infrastructure.</p>
+  </section>
+
+  <section class="contact-grid-section">
+    <div class="contact-grid">
+
+      <!-- LEFT: What to Expect -->
+      <div class="contact-info">
+        <h2 class="info-title">What happens in the demo</h2>
+        <div class="info-steps">
+          <div class="info-step">
+            <div class="step-dot"></div>
+            <div>
+              <strong>Live scan demo (15 min)</strong>
+              <p>We run Project Saiyan against a deliberately vulnerable API. You'll see real IDOR, SQLi, and auth bypass findings — with request/response proof, not just alerts.</p>
+            </div>
+          </div>
+          <div class="info-step">
+            <div class="step-dot"></div>
+            <div>
+              <strong>WAF correlation walkthrough (10 min)</strong>
+              <p>We show the attacker intelligence dashboard — who's hitting your WAF, coordinated attack patterns, impossible travel detection.</p>
+            </div>
+          </div>
+          <div class="info-step">
+            <div class="step-dot"></div>
+            <div>
+              <strong>Deployment walkthrough (15 min)</strong>
+              <p>We walk through the CDK stack and what your AWS environment needs. Most DevOps engineers can complete deployment in 3–4 hours.</p>
+            </div>
+          </div>
+          <div class="info-step">
+            <div class="step-dot"></div>
+            <div>
+              <strong>Your questions (5 min)</strong>
+              <p>Integration questions, compliance requirements, pricing — ask anything.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-block">
+          <div class="trust-row">
+            <span class="trust-icon">🔒</span>
+            <span>No data leaves your AWS account — ever</span>
+          </div>
+          <div class="trust-row">
+            <span class="trust-icon">⚡</span>
+            <span>14-day trial after the demo call</span>
+          </div>
+          <div class="trust-row">
+            <span class="trust-icon">🛠️</span>
+            <span>Onboarding call included on all plans</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Calendly embed or fallback -->
+      <div class="contact-book">
+        <div class="book-card">
+          <h3>Schedule directly</h3>
+          <p class="book-sub">Pick a time that works for you. Available Mon–Fri, multiple time zones.</p>
+          <a href="https://calendly.com" target="_blank" class="btn-primary" style="width:100%;justify-content:center;font-size:1.05rem;padding:16px;">
+            Open Scheduling →
+          </a>
+          <div class="book-or">or reach us by email</div>
+          <a href="mailto:hello@projectsaiyan.io" class="email-link">hello@projectsaiyan.io</a>
+        </div>
+
+        <div class="faq-mini">
+          <h4>Quick answers</h4>
+          <details class="faq-item">
+            <summary>Is there a free trial?</summary>
+            <p>Yes — 14-day trial license after the demo call, full access to one environment.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What AWS services do I need?</summary>
+            <p>ECS (Fargate), RDS PostgreSQL, ElastiCache Redis, and an ALB. The CDK stack provisions everything. Estimated AWS cost: $150–400/month.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you offer a proof of concept?</summary>
+            <p>Yes. After the demo, we can help you run a PoC against a staging environment at no cost for 14 days.</p>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .contact-hero { padding-bottom: 1rem; }
+  .contact-grid-section { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 8rem; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+  /* LEFT */
+  .info-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 2rem; }
+  .info-steps { display: flex; flex-direction: column; gap: 1.75rem; margin-bottom: 2.5rem; }
+  .info-step { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .info-step strong { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem; }
+  .info-step p { color: var(--text2); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+
+  .trust-block { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .trust-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--text2); }
+  .trust-icon { font-size: 1rem; }
+
+  /* RIGHT */
+  .book-card { background: var(--card); border: 1px solid rgba(108,99,255,0.3); border-radius: var(--radius); padding: 2.5rem; margin-bottom: 2rem; }
+  .book-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .book-sub { color: var(--text2); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .book-or { text-align: center; color: var(--text2); font-size: 0.85rem; margin: 1.25rem 0 0.75rem; }
+  .email-link { display: block; text-align: center; color: var(--accent2); font-size: 0.95rem; font-weight: 600; }
+  .email-link:hover { text-decoration: underline; }
+
+  /* FAQ Mini */
+  .faq-mini h4 { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text2); margin-bottom: 1rem; }
+  .faq-item { border-top: 1px solid var(--border); }
+  .faq-item summary { padding: 1rem 0; cursor: pointer; font-size: 0.9rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; color: var(--accent); font-size: 1.1rem; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p { color: var(--text2); font-size: 0.88rem; line-height: 1.65; padding-bottom: 1rem; margin: 0; }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  }
+</style>
